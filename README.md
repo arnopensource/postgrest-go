@@ -1,3 +1,9 @@
+My changes
+
+- patch 2 bugs
+- change the module name so I can use the fork directly (I intend to make a pull request later if I get some time)
+
+
 # Postgrest GO
 
 [![golangci-lint](https://github.com/supabase/postgrest-go/actions/workflows/golangci.yml/badge.svg)](https://github.com/supabase/postgrest-go/actions/workflows/golangci.yml) [![CodeFactor](https://www.codefactor.io/repository/github/supabase-community/postgrest-go/badge/main?s=101cab44de33934fd85cadcd9a9b535a05791670)](https://www.codefactor.io/repository/github/supabase/postgrest-go/overview/main)
