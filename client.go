@@ -60,6 +60,7 @@ type Client struct {
 func (c *Client) TokenAuth(token string) *Client {
 	c.clientTransport.header.Set("Authorization", "Bearer "+token)
 	c.clientTransport.header.Set("apikey", token)
+	c.session.Transport = c.clientTransport
 	return c
 }
 
@@ -67,6 +68,7 @@ func (c *Client) TokenAuth(token string) *Client {
 func (c *Client) ChangeSchema(schema string) *Client {
 	c.clientTransport.header.Set("Accept-Profile", schema)
 	c.clientTransport.header.Set("Content-Profile", schema)
+	c.session.Transport = c.clientTransport
 	return c
 }
 

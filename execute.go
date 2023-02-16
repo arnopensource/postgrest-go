@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"path"
 	"strconv"
 	"strings"
 )
@@ -30,8 +29,8 @@ func executeHelper(client *Client, method string, body []byte, urlFragments []st
 	}
 
 	readerBody := bytes.NewBuffer(body)
-	baseUrl := path.Join(append([]string{client.clientTransport.baseURL.Path}, urlFragments...)...)
-	req, err := http.NewRequest(method, baseUrl, readerBody)
+	baseUrl := client.clientTransport.baseURL.JoinPath(urlFragments...)
+	req, err := http.NewRequest(method, baseUrl.String(), readerBody)
 	if err != nil {
 		return nil, 0, err
 	}
